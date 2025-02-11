@@ -4,6 +4,7 @@ import './App.scss';
 
 const SORT_FIELD_ALPHABETICALLY = 'alphabetically';
 const SORT_FIELD_LENGTH = 'length';
+const SORT_FIELD_DEFAULT = 'default';
 
 export const goodsFromServer = [
   'Dumplings',
@@ -44,7 +45,7 @@ function getPreparedFoods(
 }
 
 export const App = () => {
-  const [sortField, setSortField] = useState<string>('');
+  const [sortField, setSortField] = useState<string>(SORT_FIELD_DEFAULT);
   const [isReversed, setIsReversed] = useState<boolean>(false);
   const visibleGoods = getPreparedFoods(goodsFromServer, sortField, isReversed);
 
